@@ -1,0 +1,23 @@
+#--------------------------------------------------------------------------------
+# service.yml
+#--------------------------------------------------------------------------------
+service.singletons:
+  - com.networknt.utility.Decryptor:
+      - com.networknt.decrypt.AESDecryptor
+  - com.networknt.balance.LoadBalance:
+      - com.networknt.balance.RoundRobinLoadBalance
+  - com.networknt.cluster.Cluster:
+      - com.networknt.cluster.LightCluster
+
+
+#--------------------------------------------------------------------------------
+# server.yml
+#--------------------------------------------------------------------------------
+
+server.enableRegistry: true
+
+#--------------------------------------------------------------------------------
+# consul.yml
+#--------------------------------------------------------------------------------
+consul.consulUrl: http://consul:8500
+consul.httpCheck: true

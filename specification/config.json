@@ -1,0 +1,31 @@
+{
+  "name": "light-petstore",
+  "version": "1.00",
+  "groupId": "com.networknt.api",
+  "artifactId": "light-petstore-api",
+  "rootPackage": "com.networknt.petstore",
+  "handlerPackage":"com.networknt.petstore.handler",
+  "modelPackage":"com.networknt.petstore.model",
+  "overwriteHandler": false,
+  "overwriteHandlerTest": false,
+  "overwriteModel": false,
+  "httpPort": 8080,
+  "enableHttp": false,
+  "httpsPort": 8443,
+  "enableHttps": true,
+  "enableRegistry": false,
+  "specChangeCodeReGenOnly": false,
+  "specChangeCodeReGenOnly": true,
+  "regeneratePomFile": false,
+  "supportDb": false,
+  "generateValuesYml": true,
+  "generateEnvVars": {
+    "generate": true,
+    "skipArray": true,
+    "skipMap": true,
+    "exclude": [
+      "handerl.yml",
+      "values.yml"
+    ]
+  }
+}
