@@ -113,6 +113,10 @@ The following is config setting for codegen:
 
  ```
 
+For detail info about the config file, please refer to: [light-codegen config](https://www.networknt.com/references/light-codegen/openapi-kotlin-generator/)
+
+
+
 At the first time to run "mvn clean install " to build project, the specChangeCodeReGenOnly should be set as 'false' which will generate the whole project:
 
  ```
