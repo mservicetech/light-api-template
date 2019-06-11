@@ -15,7 +15,9 @@ difficult to regenerate project from new openapi specification and merge the exi
 
 -- configuration     config folder for deployment. The sub-folder will created for different environment (Local/DEV/SIT/UAT)
 
-    normally the config folder will include values.ym and keystore and truststore files
+
+normally the config folder will include values.ym and keystore and truststore files
+
 
 
 -- specification    specification folder include openapi specification and config file for code-generation.
@@ -23,7 +25,7 @@ difficult to regenerate project from new openapi specification and merge the exi
 
 ##  Start to develop
 
-After the service project set on your IDE, you can run maven build from IDE or command line:
+After the service project set on your IDE, you can run maven build from IDE or from command line:
 
  -- mvn clean install
 
@@ -64,6 +66,10 @@ The maven plugin below will run light-codegen and generate API project for you:
             </plugin>
 
   ```
+
+  - [Maven Pom](https://github.com/mservicetech/light-api-template/blob/master/pom.xml)
+
+
 
 The following is config setting for codegen:
 
@@ -107,7 +113,7 @@ The following is config setting for codegen:
 
  ```
 
-When the first to run "mvn clean install " to build project, the specChangeCodeReGenOnly should be set as false since we want to generate the whole project:
+At the first time to run "mvn clean install " to build project, the specChangeCodeReGenOnly should be set as 'false' which will generate the whole project:
 
  ```
    "specChangeCodeReGenOnly": false,
