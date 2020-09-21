@@ -154,6 +154,9 @@ java -jar -Dlight-4j-config-dir=configuration/local/config  target/light-petstor
 
  ```
 
+Note: The default POM file is for JDK8, if user using JDK11, please change to pom_JDK11
+
+
 
  Verify by sending request:
 
