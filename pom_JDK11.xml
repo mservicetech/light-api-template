@@ -331,39 +331,7 @@
             </plugin>
 
 
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.4.0</version>
-                <executions>
-                    <execution>
-                        <id>light4j-codegen</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <inherited>false</inherited>
-                        <configuration>
-                            <executable>java</executable>
-                            <arguments>
-                                <argument>-jar</argument>
-                                <argument>${settings.localRepository}/com/networknt/codegen-cli/${version.light-4j}/codegen-cli-${version.light-4j}.jar</argument>
-                                <argument>-f</argument>
-                                <argument>openapi</argument>
-                                <argument>-o</argument>
-                                <argument>./</argument>
-                                <argument>-m</argument>
-                                <argument>specification/openapi.yaml</argument>
-                                <argument>-c</argument>
-                                <argument>specification/config.json</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <!-- end Google error-proce compiles -->
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -433,6 +401,36 @@
                 </configuration>
             </plugin>
 
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${version.exec-maven}</version>
+                <executions>
+                    <execution>
+                        <id>light4j-codegen</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <inherited>false</inherited>
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-jar</argument>
+                        <argument>${settings.localRepository}/com/networknt/codegen-cli/${version.light-4j}/codegen-cli-${version.light-4j}.jar</argument>
+                        <argument>-f</argument>
+                        <argument>openapi</argument>
+                        <argument>-o</argument>
+                        <argument>./</argument>
+                        <argument>-m</argument>
+                        <argument>specification/openapi.yaml</argument>
+                        <argument>-c</argument>
+                        <argument>specification/config.json</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
         </plugins>
 
 
@@ -488,5 +486,6 @@
             <url>http://cbscclrv0103d.ca.cibcwm.com:8081/artifactory/DGP-API</url>
         </repository>
     </distributionManagement>
+
 
 </project>
