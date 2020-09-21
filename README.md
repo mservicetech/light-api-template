@@ -9,6 +9,9 @@ But sometimes, developer likes to initial the project from IDE directly. And in 
 difficult to regenerate project from new openapi specification and merge the existing implemented code.
 
 
+### Note
+
+By using the default POM, it is for JDK1.8. If user use JDK11, please use the pom_JDK11.xml (change it to pom.xml)
 
 
 ##  Project folder structure.
