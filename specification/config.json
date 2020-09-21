@@ -16,7 +16,7 @@
   "enableRegistry": false,
   "specChangeCodeReGenOnly": false,
   "generateValuesYml": true,
-  "regeneratePomFile": false,
+  "skipPomFile": true,
   "supportDb": false,
   "generateValuesYml": true,
   "generateEnvVars": {
