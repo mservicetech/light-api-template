@@ -2,10 +2,10 @@
 
 In light-4j document site, it has tutorial introduce how to generate service API from openapi specification from command line:
 
-- [Generate Light-4j API from command line](https://www.networknt.com/references/light-codegen/openapi-generator/)
+- [Generate Light-4j API from command line](https://www.networknt.com/tool/light-codegen/openapi-generator/)
 
 
-But sometimes, developer likes to initial the project from IDE directly. And in the development phase, the specification may change very often. It could be
+In most of the cases, developer likes to initial the project from IDE directly. And in the development phase, the specification may change very often. It could be
 difficult to regenerate project from new openapi specification and merge the existing implemented code.
 
 
