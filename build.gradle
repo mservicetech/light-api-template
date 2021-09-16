@@ -28,47 +28,11 @@ configurations {
 }
 
 dependencies {
-    implementation "com.networknt:config:${light4jVersion}"
-    implementation "com.networknt:utility:${light4jVersion}"
-    implementation "com.networknt:decryptor:${light4jVersion}"
-    implementation "com.networknt:security:${light4jVersion}"
-    implementation "com.networknt:client:${light4jVersion}"
-    implementation "com.networknt:audit:${light4jVersion}"
-    implementation "com.networknt:info:${light4jVersion}"
-    implementation "com.networknt:health:${light4jVersion}"
-    implementation "com.networknt:status:${light4jVersion}"
-    implementation "com.networknt:exception:${light4jVersion}"
-    implementation "com.networknt:body:${light4jVersion}"
-    implementation "com.networknt:mask:${light4jVersion}"
-    implementation "com.networknt:data-source:${light4jVersion}"
-    implementation "com.networknt:metrics:${light4jVersion}"
-    implementation "com.networknt:handler:${light4jVersion}"
-    implementation "com.networknt:sanitizer:${light4jVersion}"
-    implementation "com.networknt:traceability:${light4jVersion}"
-    implementation "com.networknt:correlation:${light4jVersion}"
-    implementation "com.networknt:service:${light4jVersion}"
-    implementation "com.networknt:registry:${light4jVersion}"
-    implementation "com.networknt:balance:${light4jVersion}"
-    implementation "com.networknt:cluster:${light4jVersion}"
-    implementation "com.networknt:consul:${light4jVersion}"
-    implementation "com.networknt:server:${light4jVersion}"
-    implementation "com.networknt:openapi-parser:${light4jVersion}"
-    implementation "com.networknt:openapi-meta:${light4jVersion}"
-    implementation "com.networknt:openapi-security:${light4jVersion}"
-    implementation "com.networknt:openapi-validator:${light4jVersion}"
-    implementation "com.networknt:common:${light4jVersion}"
-    implementation "com.networknt:specification:${light4jVersion}"
+    codeGenCli libs.l4j.codegen.cli
 
-    implementation "com.networknt:json-schema-validator:${schemaValidatorVersion}"
+    implementation libs.bundles.light4j
 
-    codeGenCli "com.networknt:codegen-cli:${light4jVersion}"
-
-    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:${jacksonVersion}"
-    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
-    implementation "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
-    implementation "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
-    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
-    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jacksonVersion}"
+    implementation libs.bundles.jackson
 
     implementation "ch.qos.logback:logback-classic:1.2.3"
     implementation "io.undertow:undertow-core:2.1.6.Final"

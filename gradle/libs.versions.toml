@@ -1,0 +1,62 @@
+[versions]
+jackson = "2.12.1"
+light4j = "1.6.27"
+schemaValidator = "1.0.29"
+
+[libraries]
+l4j-config = { module = "com.networknt:config", version.ref = "light4j" }
+l4j-utility = { module = "com.networknt:utility", version.ref = "light4j" }
+l4j-decryptor = { module = "com.networknt:decryptor", version.ref = "light4j" }
+l4j-security = { module = "com.networknt:security", version.ref = "light4j" }
+l4j-client = { module = "com.networknt:client", version.ref = "light4j" }
+l4j-audit = { module = "com.networknt:audit", version.ref = "light4j" }
+l4j-info = { module = "com.networknt:info", version.ref = "light4j" }
+l4j-health = { module = "com.networknt:health", version.ref = "light4j" }
+l4j-status = { module = "com.networknt:status", version.ref = "light4j" }
+l4j-exception = { module = "com.networknt:exception", version.ref = "light4j" }
+l4j-body = { module = "com.networknt:body", version.ref = "light4j" }
+l4j-mask = { module = "com.networknt:mask", version.ref = "light4j" }
+l4j-data-source = { module = "com.networknt:data-source", version.ref = "light4j" }
+l4j-metrics = { module = "com.networknt:metrics", version.ref = "light4j" }
+l4j-handler = { module = "com.networknt:handler", version.ref = "light4j" }
+l4j-sanitizer = { module = "com.networknt:sanitizer", version.ref = "light4j" }
+l4j-traceability = { module = "com.networknt:traceability", version.ref = "light4j" }
+l4j-correlation = { module = "com.networknt:correlation", version.ref = "light4j" }
+l4j-service = { module = "com.networknt:service", version.ref = "light4j" }
+l4j-registry = { module = "com.networknt:registry", version.ref = "light4j" }
+l4j-balance = { module = "com.networknt:balance", version.ref = "light4j" }
+l4j-cluster = { module = "com.networknt:cluster", version.ref = "light4j" }
+l4j-consul = { module = "com.networknt:consul", version.ref = "light4j" }
+l4j-server = { module = "com.networknt:server", version.ref = "light4j" }
+l4j-openapi-parser = { module = "com.networknt:openapi-parser", version.ref = "light4j" }
+l4j-openapi-meta = { module = "com.networknt:openapi-meta", version.ref = "light4j" }
+l4j-openapi-security = { module = "com.networknt:openapi-security", version.ref = "light4j" }
+l4j-openapi-validator = { module = "com.networknt:openapi-validator", version.ref = "light4j" }
+l4j-common = { module = "com.networknt:common", version.ref = "light4j" }
+l4j-specification = { module = "com.networknt:specification", version.ref = "light4j" }
+
+l4j-codegen-cli = { module = "com.networknt:codegen-cli", version.ref = "light4j" }
+
+l4j-json-schema-validator = { module = "com.networknt:json-schema-validator", version.ref = "schemaValidator" }
+
+jackson-datatype-jdk8 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jdk8", version.ref = "jackson" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+jackson-core = { module = "com.fasterxml.jackson.core:jackson-core", version.ref = "jackson" }
+jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jackson" }
+jackson-datatype-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson" }
+jackson-dataformat-xml = { module = "com.fasterxml.jackson.dataformat:jackson-dataformat-xml", version.ref = "jackson" }
+
+[bundles]
+light4j = [
+	"l4j-config", "l4j-utility", "l4j-decryptor", "l4j-security", "l4j-client",
+	"l4j-audit", "l4j-info", "l4j-health", "l4j-status", "l4j-exception",
+	"l4j-body", "l4j-mask", "l4j-data-source", "l4j-metrics", "l4j-handler",
+	"l4j-sanitizer", "l4j-traceability", "l4j-correlation", "l4j-service", "l4j-registry",
+	"l4j-balance", "l4j-cluster", "l4j-consul", "l4j-server", "l4j-openapi-parser",
+	"l4j-openapi-meta", "l4j-openapi-security", "l4j-openapi-validator", "l4j-common", "l4j-specification",
+	"l4j-json-schema-validator"
+]
+jackson = [
+	"jackson-datatype-jdk8", "jackson-databind", "jackson-core", "jackson-annotations", "jackson-datatype-jsr310",
+	"jackson-dataformat-xml"
+]
