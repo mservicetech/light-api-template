@@ -24,7 +24,7 @@
     "skipArray": true,
     "skipMap": true,
     "exclude": [
-      "handerl.yml",
+      "handler.yml",
       "values.yml"
     ]
   }
