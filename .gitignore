@@ -1,8 +1,10 @@
 target/
+build/
 bower_components/
 node_modules/
 dist/
 .idea/
+.gradle/
 .tmp/
 .settings
 .metadata/

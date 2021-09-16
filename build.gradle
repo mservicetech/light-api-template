@@ -1,0 +1,85 @@
+import javax.security.auth.login.ConfigurationSpi
+
+plugins {
+    id "com.github.johnrengelman.shadow" version "7.0.0"
+    id "java"
+    id "application"
+}
+
+group 'com.networknt.api'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = "com.networknt.server.Server"
+}
+
+configurations {
+    codeGenCli
+}
+
+dependencies {
+    implementation "com.networknt:config:${light4jVersion}"
+    implementation "com.networknt:utility:${light4jVersion}"
+    implementation "com.networknt:decryptor:${light4jVersion}"
+    implementation "com.networknt:security:${light4jVersion}"
+    implementation "com.networknt:client:${light4jVersion}"
+    implementation "com.networknt:audit:${light4jVersion}"
+    implementation "com.networknt:info:${light4jVersion}"
+    implementation "com.networknt:health:${light4jVersion}"
+    implementation "com.networknt:status:${light4jVersion}"
+    implementation "com.networknt:exception:${light4jVersion}"
+    implementation "com.networknt:body:${light4jVersion}"
+    implementation "com.networknt:mask:${light4jVersion}"
+    implementation "com.networknt:data-source:${light4jVersion}"
+    implementation "com.networknt:metrics:${light4jVersion}"
+    implementation "com.networknt:handler:${light4jVersion}"
+    implementation "com.networknt:sanitizer:${light4jVersion}"
+    implementation "com.networknt:traceability:${light4jVersion}"
+    implementation "com.networknt:correlation:${light4jVersion}"
+    implementation "com.networknt:service:${light4jVersion}"
+    implementation "com.networknt:registry:${light4jVersion}"
+    implementation "com.networknt:balance:${light4jVersion}"
+    implementation "com.networknt:cluster:${light4jVersion}"
+    implementation "com.networknt:consul:${light4jVersion}"
+    implementation "com.networknt:server:${light4jVersion}"
+    implementation "com.networknt:openapi-parser:${light4jVersion}"
+    implementation "com.networknt:openapi-meta:${light4jVersion}"
+    implementation "com.networknt:openapi-security:${light4jVersion}"
+    implementation "com.networknt:openapi-validator:${light4jVersion}"
+    implementation "com.networknt:common:${light4jVersion}"
+    implementation "com.networknt:specification:${light4jVersion}"
+
+    implementation "com.networknt:json-schema-validator:${schemaValidatorVersion}"
+
+    codeGenCli "com.networknt:codegen-cli:${light4jVersion}"
+
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jacksonVersion}"
+
+    implementation "ch.qos.logback:logback-classic:1.2.3"
+    implementation "io.undertow:undertow-core:2.1.6.Final"
+    implementation "io.github.lukehutch:fast-classpath-scanner:2.18.1"
+
+    testImplementation "junit:junit:4.13.1"
+    testImplementation "org.mockito:mockito-core:2.10.0"
+    testImplementation "com.h2database:h2:1.3.176"
+}
+
+task codeGen(type: JavaExec) {
+    classpath = configurations.codeGenCli
+    args('-f', 'openapi', '-o', './', '-m', 'specification/openapi.yaml', '-c', 'specification/config.json')
+}
