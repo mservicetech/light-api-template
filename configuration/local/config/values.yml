@@ -9,3 +9,5 @@ service.singletons:
   - com.networknt.cluster.Cluster:
       - com.networknt.cluster.LightCluster
 
+server.enableHttp: true
+server.enableHttps: false
