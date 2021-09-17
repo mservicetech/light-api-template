@@ -11,3 +11,4 @@ service.singletons:
 
 server.enableHttp: true
 server.enableHttps: false
+server.httpPort: 8080
