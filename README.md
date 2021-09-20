@@ -28,6 +28,8 @@ normally the config folder will include values.ym and keystore and truststore fi
 
 ##  Start to develop
 
+Note: the default build we are using is maven. If you want to use gradle， please refer to [gradle build](docs/README.md).
+
 After the service project set on your IDE, you can run maven build from IDE or from command line:
 
  -- mvn clean install
