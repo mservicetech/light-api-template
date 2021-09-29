@@ -4,6 +4,10 @@ In light-4j document site, it has tutorial introduce how to generate service API
 
 - [Generate Light-4j API from command line](https://www.networknt.com/tool/light-codegen/openapi-generator/)
 
+From the example (petstore) detail for generate project from command line, please refer to:
+
+- [light-4j model-config petstore sample](https://github.com/networknt/model-config/tree/master/rest/openapi/petstore/1.0.0)
+
 
 In most of the cases, developer likes to initial the project from IDE directly. And in the development phase, the specification may change very often. It could be
 difficult to regenerate project from new openapi specification and merge the existing implemented code.
@@ -11,7 +15,7 @@ difficult to regenerate project from new openapi specification and merge the exi
 
 ### Note
 
-By using the default POM, it is for JDK1.8. If user use JDK11, please use the pom_JDK11.xml (change it to pom.xml)
+By using the default POM, it is for JDK11. If user use JD8, please use the pom_jdk8.xml (change the file name to pom.xml)
 
 
 ##  Project folder structure.
@@ -22,13 +26,12 @@ By using the default POM, it is for JDK1.8. If user use JDK11, please use the po
 normally the config folder will include values.ym and keystore and truststore files
 
 
-
 -- specification    specification folder include openapi specification and config file for code-generation.
 
 
 ##  Start to develop
 
-Note: the default build we are using is maven. If you want to use gradle， please refer to [gradle build](docs/README.md).
+Note: the repo we are using is for maven build. If you want to use gradle， please use [gradle api template](https://github.com/mservicetech/light-api-template-gradle).
 
 After the service project set on your IDE, you can run maven build from IDE or from command line:
 
@@ -135,7 +138,21 @@ After that, we can change the setting to 'true'. Then codegen will only generate
    "specChangeCodeReGenOnly": true,
  ```
 
+Light-4j codegen has option to generate API project to multiple-modules (default is single module) which include following modules:
 
+- client   (client module for upstream API to call current API)
+
+- service   (service module for business service classes)
+
+- model    (data model)
+ 
+- server   (API server)
+
+If user wants to generate the API as multiple modules, simply add the config below to /sepification/config.json file
+
+```json
+"multipleModule": true 
+```
 
 ## Build and verify
 
@@ -159,7 +176,7 @@ java -jar -Dlight-4j-config-dir=configuration/local/config  target/light-petstor
 
  ```
 
-Note: The default POM file is for JDK8, if user using JDK11, please change to pom_JDK11
+Note: if it is first time to generate API project, please run "mvn clean install"  one more time to build the API
 
 
 
