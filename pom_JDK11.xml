@@ -479,13 +479,6 @@
 
     </build>
 
-    <distributionManagement>
-        <repository>
-            <id>deployment</id>
-            <name>cbscclrv0103d.ca.cibcwm.com-releases</name>
-            <url>http://cbscclrv0103d.ca.cibcwm.com:8081/artifactory/DGP-API</url>
-        </repository>
-    </distributionManagement>
 
 
 </project>
