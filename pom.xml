@@ -10,7 +10,7 @@
     <properties>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.light-4j>2.0.31</version.light-4j>
+        <version.light-4j>2.1.1</version.light-4j>
         <version.jackson>2.12.1</version.jackson>
         <version.slf4j>1.7.25</version.slf4j>
         <version.undertow>2.2.4.Final</version.undertow>
@@ -200,6 +200,12 @@
             <artifactId>http-entity</artifactId>
             <version>${version.light-4j}</version>
         </dependency>
+        <dependency>
+            <groupId>com.networknt</groupId>
+            <artifactId>http</artifactId>
+            <version>${version.light-4j}</version>
+        </dependency>
+        
         <dependency>
             <groupId>com.networknt</groupId>
             <artifactId>json-schema-validator</artifactId>
